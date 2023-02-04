@@ -1,0 +1,14 @@
+
+
+ciudades = ['Leon','Guanajuato','Silao','Celaya','Salamanca', "San Miguel de Allende"]
+cantidadHabitantes = [968, 155, 77, 578, 973, 99]
+temperaturaMinima = [12,8,6,6,8,5]
+
+datosGuanajuato = list(zip(ciudades,cantidadHabitantes,temperaturaMinima))
+datosGuanajuato
+
+df_guanajuato = pd.DataFrame(data = datosGuanajuato, columns=['Ciudad', 'Habitantes','TempMinima'])
+df_guanajuato
+
+df_sub = df_guanajuato[['Ciudad', 'TempMinima']]
+print (df_sub)
