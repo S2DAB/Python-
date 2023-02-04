@@ -1,0 +1,42 @@
+
+#imports
+import pandas as pd #Usualmente se utiliza esta notación
+
+#Libreria para visualización 
+import matplotlib 
+import matplotlib.pyplot as plt
+
+#cargaos Datos
+#datos = pd.read_csv('Ruta_del_archivo.csv')
+#datos = pd.read_excel('Ruta_del_archivo.csv')
+
+from google.colab import files
+uploaded = files.upload()
+
+#Aqui va el archivo (sube y lee el file)
+path = 'countries of the world.csv'
+df = pd.read_csv(path, encoding = "utf-8")
+
+#Mostranos algunos datos df. nos sirve para mostrar datos puntuales
+df.shape 
+df.columns
+df.info()
+
+#Primeros n registros en el DataFrame
+n = 5
+df.head(n)
+
+#Ultimos registros en el DataFrame
+df.tail()
+
+#Leer una columna en particular
+print (df["Country"])
+
+#Leer una posicion en especifico [Fila,Columna]
+print (df.iloc[20,0])
+
+
+#FILTROS
+df.loc[df['Climate'] == '3']
+df['Deathrate'] = df['Deathrate'].str.replace(',','.')
+df['Deathrate'] = df['Deathrate'].astype(float) 
