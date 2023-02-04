@@ -1,0 +1,18 @@
+#César CG-Código para calcular la frecuencia de palabras en una cadena de texto
+#Solicitamos al usuario que ingrese el texto que desea analizar
+cadenaPalabras = input("Ingrese el texto a analizar: ")
+
+#dividimos la cadena en cada elemento para su posterior uso
+listaPalabras = cadenaPalabras.split()
+
+#Hacemos el conteo o frecuencia de las palabras
+frecuenciaPalab = []
+for w in listaPalabras:
+  #Mostramos la frecuencia
+    frecuenciaPalab.append(listaPalabras.count(w))
+#Podemos mostrar algunos de los siguientes datos y tener un extra de información(De no requerirse se puede elimar el código)
+
+print("Cadena\n" + cadenaPalabras +"\n")
+print("Lista\n" + str(listaPalabras) + "\n")
+print("Frecuencias\n" + str(frecuenciaPalab) + "\n")
+print("Pares\n" + str(list(zip(listaPalabras, frecuenciaPalab))))
